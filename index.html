@@ -1,828 +1,301 @@
-<!DOCTYPE html>
-<html lang="en">
+// =========================================================
+// BABY SOOGA & FRIENDS — WEBSITE JAVASCRIPT
+// =========================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // =======================================================
+  // CHARACTER DATA
+  // =======================================================
+
+  const characters = [
+
+    {
+      name: "SOOGA",
+      image: "sooga.jpg",
+      alt: "Sooga"
+    },
+
+    {
+      name: "GRAND MA",
+      image: "grand ma mithi.jpg",
+      alt: "Grand Ma Mithi"
+    },
+
+    {
+      name: "GRAND PA",
+      image: "grand pa katoo.jpg",
+      alt: "Grand Pa Katoo"
+    },
+
+    {
+      name: "KUHU",
+      image: "kuhu.jpg",
+      alt: "Kuhu"
+    },
+
+    {
+      name: "MAKAU",
+      image: "makau.jpg",
+      alt: "Makau"
+    },
+
+    {
+      name: "PIKU",
+      image: "Piku.jpg",
+      alt: "Piku"
+    },
+
+    {
+      name: "GRUU",
+      image: "gruu.jpg",
+      alt: "Gruu"
+    },
+
+    {
+      name: "HATTI",
+      image: "hatti.jpg",
+      alt: "Hatti"
+    },
+
+    {
+      name: "MAAO",
+      image: "maao.jpg",
+      alt: "Maao"
+    },
+
+    {
+      name: "MORNI",
+      image: "morni.jpg",
+      alt: "Morni"
+    },
+
+    {
+      name: "OOHO",
+      image: "ooho.jpg",
+      alt: "Ooho"
+    },
+
+    {
+      name: "PAANA",
+      image: "panna.jpg",
+      alt: "Paana"
+    },
+
+    {
+      name: "SASSA",
+      image: "sassa.jpg",
+      alt: "Sassa"
+    },
+
+    {
+      name: "TUTU",
+      image: "tutu.jpg",
+      alt: "Tutu"
+    },
+
+    {
+      name: "NIKO",
+      image: "niko.jpg",
+      alt: "Niko"
+    },
 
-<head>
+    {
+      name: "HOOTU",
+      image: "hootu.png",
+      alt: "Hootu"
+    },
 
-  <meta charset="UTF-8">
+    {
+      name: "MINGO",
+      image: "mingo.jpg",
+      alt: "Mingo"
+    },
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {
+      name: "BOWU",
+      image: "bowu.jpg",
+      alt: "Bowu"
+    },
 
-  <meta name="description"
-    content="Baby Sooga & Friends — a joyful world of cartoon characters, fun, learning, music, stories and giggles.">
+    {
+      name: "CHUNCHU",
+      image: "chunchu.jpg",
+      alt: "Chunchu"
+    },
 
-  <meta name="keywords"
-    content="Baby Sooga, Sooga, kids cartoons, kids entertainment, cartoon characters, children's entertainment">
+    {
+      name: "DIYAA",
+      image: "diyaa.jpg",
+      alt: "Diyaa"
+    },
 
-  <meta name="author" content="Baby Sooga & Friends">
+    {
+      name: "DOLPHY",
+      image: "dolphy.jpg",
+      alt: "Dolphy"
+    }
 
-  <title>Baby Sooga & Friends | A Little World of BIG Fun</title>
+  ];
 
-  <link rel="stylesheet" href="style.css">
 
-</head>
+  // =======================================================
+  // BUILD CHARACTER GALLERY
+  // =======================================================
 
+  const characterGrid =
+    document.querySelector(".character-grid");
 
-<body>
 
+  if (characterGrid) {
 
-  <!-- ================= NAVIGATION ================= -->
+    characterGrid.innerHTML = "";
 
-  <header class="navbar">
 
-    <div class="container nav-inner">
+    characters.forEach(character => {
 
-      <a href="#home" class="logo">
-        BABY <span>SOOGA</span>
-      </a>
+      const card = document.createElement("article");
 
-      <nav>
+      card.className = "character-card";
 
-        <ul class="nav-links">
 
-          <li><a href="#home">Home</a></li>
+      card.innerHTML = `
 
-          <li><a href="#about">About</a></li>
+        <div class="character-image">
 
-          <li><a href="#characters">Friends</a></li>
-
-          <li><a href="#media">Watch & Listen</a></li>
-
-          <li><a href="#contact">Contact</a></li>
-
-        </ul>
-
-      </nav>
-
-    </div>
-
-  </header>
-
-
-
-  <!-- ================= HERO ================= -->
-
-  <main>
-
-    <section class="hero" id="home">
-
-      <div class="bubble bubble-1"></div>
-
-      <div class="bubble bubble-2"></div>
-
-      <div class="bubble bubble-3"></div>
-
-      <div class="bubble bubble-4"></div>
-
-
-      <div class="container hero-content">
-
-        <div class="hero-badge">
-          ✨ SOMETHING FUN IS COMING ✨
-        </div>
-
-
-        <h1>
-
-          SOOGA & FRIENDS
-
-          <span>ARE GETTING READY!</span>
-
-        </h1>
-
-
-        <p class="hero-text">
-
-          A little world of BIG fun, friendship,
-          imagination and learning is coming your way...
-
-        </p>
-
-
-        <div class="hero-punchline">
-
-          THE GIGGLES ARE ALMOST HERE! 😄
-
-        </div>
-
-
-        <div class="hero-buttons">
-
-          <a href="#characters" class="btn btn-primary">
-            Meet the Friends
-          </a>
-
-          <a href="#media" class="btn btn-secondary">
-            Watch & Listen
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ================= FUN STRIP ================= -->
-
-    <div class="fun-strip">
-
-      <div class="fun-track">
-
-        ✨ FUN • FRIENDSHIP • MUSIC • STORIES • LEARNING •
-        GIGGLES • ADVENTURE • FUN • FRIENDSHIP • MUSIC •
-        STORIES • LEARNING • GIGGLES • ADVENTURE • ✨
-
-      </div>
-
-    </div>
-
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section class="section about" id="about">
-
-      <div class="container">
-
-        <h2 class="section-title">
-          Welcome to Sooga's World! 🌈
-        </h2>
-
-
-        <p class="section-subtitle">
-
-          A playful little universe where every friend
-          has a story, every day brings an adventure,
-          and learning becomes fun.
-
-        </p>
-
-
-        <div class="about-grid">
-
-
-          <div class="about-card">
-
-            <h3>
-              Big Fun. Little Friends. ❤️
-            </h3>
-
-            <p>
-
-              Baby Sooga and friends are getting ready
-              to bring children a colorful world filled
-              with stories, songs, laughter, friendship,
-              imagination and joyful learning.
-
-            </p>
-
-          </div>
-
-
-          <div class="about-card">
-
-            <h3>
-              Our Little Promise ✨
-            </h3>
-
-            <p>
-
-              Every adventure should make kids smile,
-              spark their imagination and leave them
-              wanting to say...
-
-              <strong>"Again! Again!"</strong>
-
-            </p>
-
-          </div>
-
+          <img
+            src="images/${character.image}"
+            alt="${character.alt}"
+            loading="lazy">
 
         </div>
 
-      </div>
-
-    </section>
-
-
-
-    <!-- ================= CHARACTERS ================= -->
-
-    <section class="section characters" id="characters">
-
-      <div class="container">
-
-
-        <h2 class="section-title">
-
-          Meet Sooga & Friends 🥳
-
-        </h2>
-
-
-        <p class="section-subtitle">
-
-          Our colorful gang is getting ready to meet you!
-
-        </p>
-
-
-        <div class="character-grid">
-
-
-
-          <!-- 01 SOOGA -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/SOOGA FRONT.jpg"
-                alt="Sooga"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              SOOGA
-            </div>
-
-          </article>
-
-
-
-          <!-- 02 GRAND MA -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/GRAND MA FRONT.jpg"
-                alt="Grand Ma"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              GRAND MA
-            </div>
-
-          </article>
-
-
-
-          <!-- 03 GRAND PA -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/GRAND PA SIDE.jpg"
-                alt="Grand Pa"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              GRAND PA
-            </div>
-
-          </article>
-
-
-
-          <!-- 04 KUHU -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/KUHU -DIDI - FRONT.jpg"
-                alt="Kuhu"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              KUHU
-            </div>
-
-          </article>
-
-
-
-          <!-- 05 MAKAU -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/MAKAU FRONT.jpg"
-                alt="Makau"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              MAKAU
-            </div>
-
-          </article>
-
-
-
-          <!-- 06 MUMMA / PIKU -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/MUMMA FRONT.jpg"
-                alt="Piku Mumma"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              PIKU
-            </div>
-
-          </article>
-
-
-
-          <!-- 07 GRUU -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/GRUU THE LION_edited.jpg"
-                alt="Gruu the Lion"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              GRUU
-            </div>
-
-          </article>
-
-
-
-          <!-- 08 HATTI -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/hatti.jpg"
-                alt="Hatti the Elephant"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              HATTI
-            </div>
-
-          </article>
-
-
-
-          <!-- 09 MAAO -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/maao the cat_edited.jpg"
-                alt="Maao the Cat"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              MAAO
-            </div>
-
-          </article>
-
-
-
-          <!-- 10 MORNI -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/MORNI THE PEACOCK_edited.jpg"
-                alt="Morni the Peacock"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              MORNI
-            </div>
-
-          </article>
-
-
-
-          <!-- 11 OOHO -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/OOHO THE MONKEY_edited.jpg"
-                alt="Ooho the Monkey"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              OOHO
-            </div>
-
-          </article>
-
-
-
-          <!-- 12 PAANA -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/PAANA THE PANDA_edited.jpg"
-                alt="Paana the Panda"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              PAANA
-            </div>
-
-          </article>
-
-
-
-          <!-- 13 SASSA -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/SASSA THE RABBIT_edited.jpg"
-                alt="Sassa the Rabbit"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              SASSA
-            </div>
-
-          </article>
-
-
-
-          <!-- 14 TUTU -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/tutu the tortoise_edited.jpg"
-                alt="Tutu the Tortoise"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              TUTU
-            </div>
-
-          </article>
-
-
-
-          <!-- 15 NIKO -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/NIKO_edited.jpg"
-                alt="Niko"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              NIKO
-            </div>
-
-          </article>
-
-
-
-          <!-- 16 HOOTU -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/HOOTU THE OWL TEACHER_edited.png"
-                alt="Hootu the Owl Teacher"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              HOOTU
-            </div>
-
-          </article>
-
-
-
-          <!-- 17 MINGO -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/Mingo.jpg"
-                alt="Mingo"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              MINGO
-            </div>
-
-          </article>
-
-
-
-          <!-- 18 BOWU -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/BOWU THE DOG_edited.jpg"
-                alt="Bowu the Dog"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              BOWU
-            </div>
-
-          </article>
-
-
-
-          <!-- 19 CHUNCHU -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/CHUNCHU THE ROBIN_edited.jpg"
-                alt="Chunchu the Robin"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              CHUNCHU
-            </div>
-
-          </article>
-
-
-
-          <!-- 20 DIYA -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/DIYA-THE DEER_edited.jpg"
-                alt="Diya the Deer"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              DIYA
-            </div>
-
-          </article>
-
-
-
-          <!-- 21 DOLPY -->
-
-          <article class="character-card">
-
-            <div class="character-image">
-
-              <img
-                src="images/DOLPY THE DOLPHINE_edited.jpg"
-                alt="Dolpy the Dolphin"
-                loading="lazy">
-
-            </div>
-
-            <div class="character-name">
-              DOLPY
-            </div>
-
-          </article>
-
-
-
+        <div class="character-name">
+          ${character.name}
         </div>
 
-      </div>
+      `;
 
-    </section>
 
+      characterGrid.appendChild(card);
 
+    });
 
-    <!-- ================= MEDIA ================= -->
+  }
 
-    <section class="section media-section" id="media">
 
-      <div class="container">
+  // =======================================================
+  // SMOOTH NAVIGATION
+  // =======================================================
 
+  document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(link => {
 
-        <h2 class="section-title">
-          More Sooga Fun! 🎵
-        </h2>
+      link.addEventListener("click", function (e) {
 
+        const target =
+          document.querySelector(this.getAttribute("href"));
 
-        <p class="section-subtitle">
 
-          Songs, stories, adventures and lots of giggles
-          are waiting for you.
+        if (target) {
 
-        </p>
+          e.preventDefault();
 
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
 
-        <div class="media-grid">
+        }
 
+      });
 
-          <div class="media-card">
+    });
 
-            <h3>
-              ▶️ Watch Us
-            </h3>
 
-            <p>
+  // =======================================================
+  // HERO ANIMATION
+  // =======================================================
 
-              Adventures, songs and fun videos
-              are coming to our YouTube world.
+  const heroTitle =
+    document.querySelector(".hero h1");
 
-            </p>
 
-            <a href="#" class="btn btn-primary">
-              Visit YouTube
-            </a>
+  if (heroTitle) {
 
-          </div>
+    heroTitle.style.opacity = "0";
 
+    heroTitle.style.transform =
+      "translateY(20px)";
 
 
-          <div class="media-card">
+    setTimeout(() => {
 
-            <h3>
-              🎵 Listen With Us
-            </h3>
+      heroTitle.style.transition =
+        "all 0.8s ease";
 
-            <p>
+      heroTitle.style.opacity = "1";
 
-              Get ready to sing, dance and
-              enjoy Sooga's musical world.
+      heroTitle.style.transform =
+        "translateY(0)";
 
-            </p>
+    }, 200);
 
-            <a href="#" class="btn btn-secondary">
-              Visit Spotify
-            </a>
+  }
 
-          </div>
 
+  // =======================================================
+  // CHARACTER CARD ANIMATION
+  // =======================================================
 
-        </div>
+  const cards =
+    document.querySelectorAll(".character-card");
 
-      </div>
 
-    </section>
+  if ("IntersectionObserver" in window) {
 
+    const observer =
+      new IntersectionObserver(
 
+        entries => {
 
-    <!-- ================= CONTACT ================= -->
+          entries.forEach(entry => {
 
-    <section class="section contact" id="contact">
+            if (entry.isIntersecting) {
 
-      <div class="container">
+              entry.target.style.opacity = "1";
 
-        <div class="contact-box">
+              entry.target.style.transform =
+                "translateY(0)";
 
+            }
 
-          <h2>
-            Let's Stay Connected! 💌
-          </h2>
+          });
 
+        },
 
-          <p>
+        {
+          threshold: 0.12
+        }
 
-            For collaborations, partnerships,
-            business enquiries and all things Sooga...
+      );
 
-          </p>
 
+    cards.forEach(card => {
 
-          <a
-            href="mailto:hello@babysooga.com"
-            class="btn btn-primary">
+      card.style.opacity = "0";
 
-            Say Hello 👋
+      card.style.transform =
+        "translateY(25px)";
 
-          </a>
+      card.style.transition =
+        "opacity 0.6s ease, transform 0.6s ease";
 
+      observer.observe(card);
 
-        </div>
+    });
 
-      </div>
+  }
 
-    </section>
-
-
-  </main>
-
-
-
-  <!-- ================= FOOTER ================= -->
-
-  <footer>
-
-    <div class="container">
-
-      <div class="footer-logo">
-        BABY SOOGA & FRIENDS 🌈
-      </div>
-
-      <p class="footer-text">
-
-        © 2026 Baby Sooga & Friends.
-        All rights reserved.
-
-      </p>
-
-    </div>
-
-  </footer>
-
-
-
-  <!-- ================= JAVASCRIPT ================= -->
-
-  <script src="script.js"></script>
-
-
-</body>
-
-</html>
+});
